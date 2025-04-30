@@ -3,10 +3,14 @@
     "author": "Rui Coelho",
     "version": "0.0.1",
     "description": "My beautiful receipt project",
+    "engines": {
+        "node": "22.14.0",
+        "npm": "11.2.0"
+    },
     "scripts": {
-         "start":"serve"
+         "start": "serve"
     }
     "dependencies": {
-         "serve":"^11.3.2"
+         "serve": "^11.3.2"
     }
 }
