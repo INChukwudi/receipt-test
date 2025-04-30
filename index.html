@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html class=" "><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+  <title>Payment Invoice</title>
+
+  <link href="https://login.remita.net/remita/res/app-resources/custom/img/favicon-remita.png" rel="shortcut icon" type="image/x-icon">
+
+  <style type="text/css">@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/hebrew/400/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(https://login.remita.net/cf-fonts/s/open-sans/5.0.20/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}</style>
+
+  <link rel="stylesheet" href="https://login.remita.net/remita/res/app-resources/dest/onepage-bundle.min.css?v=1.6.01">
+
+  <link rel="stylesheet" href="https://login.remita.net/remita/res/app-resources/dest/avs-bundle.min.css?v=1.6.01">
+
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!--[if IE]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <style>
+
+    .float-left-div {
+      margin-top: 40px;
+      padding: 10px;
+      margin-left: 30px;
+      display: initial;
+      z-index: 1060;
+      position: relative !important;
+      width: 100% !important;
+      border: 5px solid red;
+    }
+  </style>
+  <![endif]-->
+<body class="wide device-xs" data-new-gr-c-s-check-loaded="14.1232.0" data-gr-ext-installed="">
+<div class="wrapper" id="topShowError" style="animation-duration: 1000ms; opacity: 1;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- HEADER -->
+  <header id="header" class="header-static" style="background-image: url(https://login.remita.net/remita/res/app-resources/template/external-onepage/images/header-bg-light.png);">
+    <div id="headerLoading" class="hidden" style="z-index:999999;   display: block; position:absolute; width: 100%; text-align: center;"><span style="background:#fff; padding:10px">Loading data, Please wait ...</span></div>
+    <div id="header-wrap" style="z-index:1; position:relative">
+      <div class="container">
+        <!--LOGO-->
+        <div id="logo">
+          <a href="//www.remita.net/signin" class="logo" data-dark-logo="/remita//res/images/remita_logo_white.png">
+            <img style="width:100%;" src="https://login.remita.net/remita//res/images/remita_logo_white.png" alt="Remita Logo">
+          </a>
+
+        </div>
+        <!--END: LOGO-->
+
+        <!--MOBILE MENU -->
+        <div class="nav-main-menu-responsive">
+          <button class="lines-button x" type="button" data-toggle="collapse" data-target=".main-menu-collapse">
+            <span class="lines"></span>
+          </button>
+        </div>
+        <!--END: MOBILE MENU -->
+
+
+        <!--NAVIGATION-->
+        <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
+          <div class="container">
+
+            <nav id="mainMenu" class="main-menu mega-menu">
+              <ul class="main-menu nav nav-pills">
+                <li><a href="https:////www.remita.net/products/about/"> About</a></li>
+                <li><a href="https:////www.remita.net/mobileapp/">Remita Mobile</a></li>
+                <li><a href="https:////www.remita.net/developers/">Developers</a></li>
+                <li><a href="https:////www.remita.net/signin/"><span class="nav-label label-nav-remita infinit">Signin</span></a></li>
+                <li><a href="https:////www.remita.net/signup/" target="_blank"><span class="nav-label-signup label-nav-remita-signup infinit">Signup</span></a></li>
+                <!--  <li><i class="fa fa-bars menu_bar" aria-hidden="true"></i></li> -->
+              </ul>
+
+            </nav>
+
+          </div>
+        </div>
+        <!--END: NAVIGATION-->
+
+      </div>
+    </div>
+  </header>
+  <!-- END: HEADER -->
+
+  <section class="no-padding template-pagetitle">
+
+
+
+    <div class="container" style="margin-top: 40px; margin-bottom: 20px">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 style="color: #f3661d" id="pageTitle">Payment Confirmation</h3>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </section>
+  <section class="no-padding">
+    <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-6 text-right pull-right" id="printInvoiceIcon"> </div>
+      </div>
+      <div class="row" id="invoiceContainer">
+
+        <div class="container">
+          <div class="print-area">
+
+            <div id="suMsg"><div class="row print-bg animated zoomIn visible" style="background: #085326 !important; margin-bottom: 1rem;"><div class="col-md-12 text-center p-20 center"><span class="invoice-font" style="color:#fff !important"> <i class="fa fa-exclamation-circle" aria-hidden="true" style="padding-right: 5px; color:#fff !important"></i>Payment Successful -successful <i class="fa fa-exclamation-circle" aria-hidden="true" style="padding-left: 5px; color:#fff !important"></i></span></div></div></div>
+
+
+            <div class="row m-t-10 m-b-10">
+              <div class="col-md-12 center">
+                <div class="col-md-12 text-center p-t-10 p-b-10 p-l-30"><img id="billerLogo64" style="width:150px !important">
+                  <h3 style="margin-top: 33px;"><span id="beneficiary-2">FEDERAL ROAD SAFETY COMMSSION (FRSC) - 011102400100</span></h3>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <div class="col-md-12 hidden" id="extraDataDiv" style="padding-left:0; padding-right:0;">
+                  <div id="extraData">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table p-10">
+                  <tbody><tr>
+                    <td class="col-md-4">
+                      <!-- <span> Scan barcode below to pay</span><br> -->
+                      <div id="qrCode"></div>
+                    </td>
+                    <td class="col-md-8 text-right" style="width: 350px;">
+                      <table class="pull-right">
+                        <tbody><tr>
+                          <td><span id="rType" class="invoice-font" style="font-size:36px !important"></span></td>
+                        </tr>
+                        <tr>
+                          <td><span id="createdDate" style="font-size: 12px; padding-right: 8px;">Generated on 05/01/2025</span>
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px #fff solid;">
+                          <td class="p-t-10 p-b-10 p-r-10 text-right font-wight-50 bold" style=" background: #f8f8f8; font-size: 15px; font-weight: 700;"><span>
+												Remita Retrieval Reference</span></td>
+                        </tr>
+                        <tr>
+                          <td class="p-t-10 p-b-10 p-r-10 text-right font-wight-50 bold" style="width: 350px; margin-bottom: 0px; background: #f8f8f8 !important">
+                            <span style="font-weight:bolder; font-size: 30px;" id="rrr">1912-1529-0225</span></td>
+                        </tr>
+
+                        </tbody></table>
+                    </td>
+                  </tr>
+                  </tbody></table>
+              </div>
+            </div>
+
+
+
+
+            <div class="row" id="resizePayment4Print">
+              <!--<div class="col-md-12 hidden" id="extraDataDiv">
+                <div id="extraData">
+                </div>
+                </div>-->
+
+              <div class="col-md-12 hidden payment-details">
+                <div class="row m-b-15">
+                  <div class="col-md-12">
+                    <div class="p-10 invoice-main-header"><span id="ivoiceInfoTitle" style="color:#fff !important">BILLER INFORMATION</span>
+                    </div>
+                    <table class="fullwidth">
+
+                      <tbody><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Name
+                        </td>
+                        <td class="p-10 invoice-data-bg font-size-20-px"><span id="beneficiaryName" style="font-weight: bold;">FEDERAL ROAD SAFETY COMMSSION (FRSC) - 011102400100</span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Address
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="address">MAPUTO STREET WUSE ZONE 3</span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Phone Number
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="billerPhone"></span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Email
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="billerEmail"> </span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid" id="hideTax4fnf">
+                        <td class="p-10 invoice-head-title">
+                          Tax Number
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="billerTaxNumber"></span></td>
+                      </tr>
+                      </tbody></table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row m-b-15">
+                  <div class="col-md-12">
+                    <div class="p-10 invoice-main-header" style="color:#fff !important">
+                      Payment Details
+                    </div>
+                    <table class="fullwidth" style="margin-right:10px !important">
+                      <tbody><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-5" style="font-size: 10px; font-weight: bold;  background:#dbdbdb" colspan="2"><span class="pull-left">
+											Description</span><span class="pull-right" style="padding-right: 20px !important;">
+											Amount</span></td>
+                      </tr>
+                      <tr class="invoice-data-bg" style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10"><span id="serviceType">OFFENCE</span></td>
+                        <td class="p-10 text-right" style="padding-right: 20px !important;"><span id="amount">NGN 3,000.00</span></td>
+                      </tr>
+                      <tr id="chargeFeeTr" class="invoice-data-bg" style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10  text-right " style="font-weight: bolder;">
+                          Charges
+                        </td>
+                        <td class="p-10  text-right" style="padding-right: 20px !important;"><span id="chargeFee">NGN 150.00</span></td>
+                      </tr>
+                      <tr id="vatOnCharge" class="invoice-data-bg" style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10  text-right " style="font-weight: bolder;">
+                          Vat On Charges
+                        </td>
+                        <td class="p-10  text-right" style="padding-right: 20px !important;"><span id="vatOnChargeFee">NGN 11.25</span></td>
+                      </tr>
+                      <tr id="vatAmountTr" class="invoice-data-bg hidden" style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10  text-right" style="font-weight: bolder;">
+                          Vat Amount
+                        </td>
+                        <td class="p-10  text-right" style="padding-right: 20px !important;"><span id="vatAmount">NGN 0.00</span></td>
+                      </tr>
+
+
+                      <tr class="invoice-font" style="background:#dbdbdb !important; border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10  text-right font-size-25-px" style="background:#dbdbdb; font-weight: bolder;">
+                          Total Amount
+                        </td>
+                        <td class="p-10  text-right font-size-25-px" style="padding-right: 20px !important;"><span style="font-weight: bolder;" id="netAmount">NGN 3,161.25</span></td>
+                      </tr>
+                      </tbody></table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 payment-details hidden">
+                <div class="row m-b-15">
+                  <div class="col-md-12">
+                    <div class="invoice-font p-10 invoice-main-header" style="color: #fff !important;">
+                      Payer Information
+                    </div>
+                    <table class="fullwidth">
+
+                      <tbody><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Name
+                        </td>
+                        <td class="p-10 invoice-data-bg font-size-20-px"><span id="payer" style="font-weight: bold;">Ike  Nwako Chukwudi</span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Phone Number
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="phoneNumber"> 234 800 000 00</span></td>
+                      </tr>
+                      <tr style="border-top: #fff thin solid; border-bottom: #fff thin solid">
+                        <td class="p-10 invoice-head-title">
+                          Email
+                        </td>
+                        <td class="p-10 invoice-data-bg"><span id="email">precious.ignite@yahoo.com</span></td>
+                      </tr>
+                      </tbody></table>
+                  </div>
+                </div>
+
+                <div class="row m-b-15" id="hideBillerReqInfo4fnf">
+                  <div class="col-md-12">
+                    <div class="invoice-font p-10 invoice-main-header" style="color: #fff !important;">
+                      BILLER-REQUIRED INFORMATION
+                    </div>
+                    <table class="fullwidth">
+                      <tbody><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid; background:#dbdbdb">
+                        <td class="p-5" style="font-size: 10px; font-weight: bold; width: 30%"><span>
+											ITEM</span></td>
+                        <td class="p-5" style="font-size: 10px; font-weight: bold;"><span>
+											Description</span></td>
+                      </tr>
+                      </tbody></table><table class="fullwidth" id="billerRegInfo"><tbody><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Unit</span></td><td class="p-10"><span>RS7.110 - LUGBE UNIT - RS7.1 - FCT SECTOR</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Sector Command</span></td><td class="p-10"><span>RS7.1 - FCT SECTOR</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Description</span></td><td class="p-10"><span>Offence </span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Gifmis Code  -  ( If Unknown Contact Mda)</span></td><td class="p-10"><span>100002776</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Vehicle Type</span></td><td class="p-10"><span>Toyota</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Vehicle Make</span></td><td class="p-10"><span>Toyota</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Vehicle Colour</span></td><td class="p-10"><span>Custom</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Driver Licence Number</span></td><td class="p-10"><span>NA</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Offence Ticket Number</span></td><td class="p-10"><span>007D18D01497</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Vehicle Registration Number</span></td><td class="p-10"><span>KWL658KZ</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>Vehicle Number Plate</span></td><td class="p-10"><span>KWL658KZ</span></td></tr><tr style="border-top: #fff thin solid; border-bottom: #fff thin solid"><td class="p-10" style="width:30%"><span>VLV - VEHICLE LICENCE VIOLATION</span></td><td class="p-10"><span>VLV - VEHICLE LICENCE VIOLATION</span></td></tr></tbody></table>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10 center">
+                <span class="col-md-4 text-left pull-left p-10"></span><span class="pull-right" id="show-details" style="cursor: pointer;"><i class="fa fa-arrow-down" aria-hidden="true"></i>
+						Show Details </span>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 center">
+              <div class="col-md-12 text-center p-10 center" id="printInvoiceOrReciept"><button id="reciptOrInvoice" class="button center " style="background: #006d67; color: #fff; font-size: 13px;font-weight: 100; letter-spacing: 3px;"><img src="https://login.remita.net/remita/res/app-resources/template/external-onepage/images/print-icon.png" alt="print-icon" style="width:20px; margin-right: 5px;">PRINT RECEIPT</button></div>
+              <!-- <div class="col-md-6 text-center p-10 hidden" id="printThirdPartyReceipt"></div> -->
+              <div class="col-md-6 center p-10 " id="interURL"></div>
+              <div class="col-md-6 center text-left p-10" id="retryPayment"> </div>
+            </div>
+          </div>
+
+          <!-- <div class="row invoice-link-container hidden">
+              <div class="col-md-12 center">
+                <div class="col-md-6 text-center p-10 center">
+                  <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Copied" type="button" id="copy-invoice-link-btn">Copy Invoice URL</button>
+                </div>
+              </div>
+            </div> -->
+        </div>
+
+
+      </div>
+
+      <script type="text/javascript" src="https://login.remita.net/payment/v1/remita-pay-inline.bundle.js"></script>
+
+
+      <script type="text/javascript">
+        var pageSettings = {
+          apiURL: "https://login.remita.net/remita/onepage/cloud/",
+          contextPath: "/remita",
+          utilScriptPath: "/remita/res/app-resources/template/external-onepage/js/utils.js",
+          captPath: "https://login.remita.net/remita/",
+          apiVersion: "221768",
+          template: "/remita/res/app-resources/template/external-onepage",
+          receiptUrl: "https://login.remita.net/remita/exapp/api/v1",
+          REMITA_PAY_INLINE_PUBLIC_KEY: "U1lTUHwyNTQ3OTE2fDExODA0ZTc3ZmYzZWQ2MjY3YmRhNjg0ZWM1ZmQ1MWY0NDlkOTc1YmU3NDRhYWYzZWMzYWFmNjBmNjNkMjFlODZkNjJjOTk1MTUyNTQ3ZjQ1MjRkYTVhZjc1OTE5YTgyZjM2MjNiYzc3NmEyMmM0YjQ0NWI3MjJjNTBjZDA3Nzli",
+          invoiceBaseUrl: "login.remita.net/remita"
+        };
+        var cpath = "https://login.remita.net/remita/";
+      </script>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    #footer {
+      background-color: #F2F2F2;
+      font-size: 16px;
+    }
+
+    #footer .footer-container {
+      padding-top: 5%;
+      padding-bottom: 3%;
+    }
+
+    #footer .copyright-container {
+      padding-top: 20px;
+      padding-bottom: 25px;
+    }
+
+    #footer .logo {
+      margin-bottom: 36px;
+    }
+
+    #footer p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    #footer .app_download img {
+      margin-top: 6px;
+    }
+
+    #footer ul li .title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #26272d;
+      font-size: 12px;
+    }
+
+    #footer ul li a {
+      color: #8c8f94;
+      text-decoration: none;
+      line-height: 36px;
+      font-size: 14px;
+    }
+
+    #footer ul li a:hover {
+      color: #26272d;
+    }
+
+    #footer .socials {
+      margin-top: 19px;
+      padding-bottom: 3%;
+    }
+
+    #footer .socials li {
+      display: inline-block;
+      font-size: 20px;
+      margin-right: 20px;
+    }
+
+    #footer .socials li a {
+      color: rgba(19, 19, 21, 0.3);
+    }
+
+    #footer .socials li:last-child {
+      margin-right: 0;
+    }
+
+    #footer .more-info {
+      line-height: 24px;
+      font-size: 14px;
+    }
+
+    #footer .made-by {
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 22px;
+      color: #26272d;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    #footer .made-by a img {
+      margin-top: -8px;
+      margin-left: 8px;
+    }
+
+    #social-media {
+      width: 100%;
+      float: left;
+      text-align: center;
+      padding-top: 4%;
+    }
+
+    .row.h-divider {
+      width: 100%;
+      float: left;
+      border-bottom: 0.6px solid #d6d6d6;
+    }
+
+    .row.footer-credit {
+      width: 100%;
+      text-align: center;
+      padding-top: 6%;
+      display: block;
+    }
+
+    #footer h4 {
+      margin-bottom: 5px;
+      font-size: 2.6rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+      color: inherit;
+    }
+
+    #footer .row.h-divider {
+      margin: 50px 0 0;
+    }
+
+    #footer a {
+      text-decoration: none;
+      color: #8c8f94;
+    }
+
+    #footer a:hover {
+      color: #26272d;
+    }
+    #footer .socials {
+      margin-bottom: 60px;
+    }
+    #footer .footer-links {
+      margin-bottom: 30px;
+    }
+    #footer .footer-links:last-child {
+      margin-bottom: 0;
+    }
+    #footer .footer-links {
+      margin-bottom: 30px;
+    }
+    #footer .footer-links:last-child {
+      margin-bottom: 0;
+    }
+    #footer .footer-links ul{
+      list-style: none;
+    }
+
+  </style>
+  <!-- FOOTER -->
+  <!-- DISABLED SERVICE MODAL -->
+  <div class="modal fade" id="service-under-maintenance-modal" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+    <div class="modal-dialog" style="z-index: 99999; !important">
+      <div class="modal-content" style="margin-top: 25%; !important">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="service-under-maintenance-modal--title" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <img class="" alt="" src="https://login.remita.net/remita/res/app-resources/custom/img/service-type downtime-icon.png">
+                <p style="font-weight:bold; color:#000; margin-top:3rem;">
+                  <span class="service-name"></span> is currently unavailable
+                </p>
+              </div>
+              <div class="service-under-maintenance--message">
+                <p class="text-center">
+                  The service type you have requested for is currently undergoing maintenance.
+                  Please bear with us as we resolve this shortly
+                </p>
+              </div>
+              <div class="button-wrapper text-center" style="margin-bottom: 2rem; margin-top: 4rem;">
+                <button data-dismiss="modal" class="btn" style="border-radius: 26px; min-width: 200px;">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal-su" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+    <div class="modal-dialog modal-lg" style="z-index: 99999; !important">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="iframe-instrustion close" aria-hidden="true" data-dismiss="modal" type="button" id="close-iframe" style="font-size:40px !important;">×</button>
+          <h4 class="modal-title" id="modal-label"><img alt="Remita Logo" src="https://login.remita.net/remita/res/app-resources/template/external-onepage/images/logo.png" style="width: 77px; padding-bottom: 8px; margin-right: 3px;">Processing your payment...
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="ifrdiv">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER  msg -->
+  <div class="modal fade" id="modal-int" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+    <div class="modal-dialog" style="z-index: 99999; !important">
+      <div class="modal-content" style="margin-top: 50%; !important">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">ï¿½</button>
+          <h4 class="modal-title" id="int-name">&nbsp;</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="int-msg">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button data-dismiss="modal" class="btn btn-b" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--bank branches modal-->
+  <div class="modal fade" id="bankBranchModal" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+    <div class="modal-dialog" style="z-index: 99999; !important">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">ï¿½</button>
+          <h4 id="modal-label-2" class="modal-title">Available bank branches</h4>
+        </div>
+        <div class="modal-body" style="height: 450px; width:100%;overflow:auto;">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="openBankBranches">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--bank branches modal-->
+</div>
+<!--PFA modal-->
+<div class="modal fade" id="pfaModal" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+  <div class="modal-dialog" style="z-index: 99999; !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">ï¿½</button>
+        <h4 id="modal-label-2" class="modal-title">PFA CODES</h4>
+      </div>
+      <div class="modal-body" style="height: 450px; width:100%;overflow:auto;">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="openPfaCodes">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!--PFA  modal-->
+<div class="modal fade" id="modal-fileupload" tabindex="-1" role="modal" aria-labelledby="modal-label" aria-hidden="true" style="z-index: 999999">
+  <div class="modal-dialog modal-lg" style="z-index: 99999; !important; width:auto !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">ï¿½</button>
+        <h4 id="modal-label-2" class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-12" style=" overflow-x: scroll; ">
+            <div id="fileupload-msg">
+              <table id="fileuploadTable" class="display table-responsive" cellspacing="0">
+                <thead>
+                <tr id="tableHead">
+
+                </tr>
+                </thead>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-left">
+          <button data-dismiss="modal" class="btn btn-b" type="button">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FOOTER -->
+
+<footer class="background-grey" id="footer">
+  <!--
+    <div class="footer-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <img src="/remita/res/images/remita_logo_white.png">
+            </div>
+          <div class="col-md-3">
+            <div class="widget clearfix widget-contact-us">
+              <h4 class="widget-title">Contact us</h4>
+              <ul class="list-large list-icons">
+                <li>www.systemspecs.com.ng</li>
+                <li>Plot B22, Yesufu Abiodun Oniru Road, Oniru.</li>
+                <li>(234) 8035555051-2</li>
+                <li>0700-4736482, 01 280 5180-8, 0700-7877678 </li>
+                <li><img alt="" src="/remita/res/images/support.png"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="widget clearfix widget-tweeter">
+              <ul class="list-large list-icons">
+              <li><a href="https:////www.remita.net/index.php">Website</a></li>
+                <li><a href="https:////www.remita.net/about/faq.html">FAQS</a></li>
+                <li><a href="https:////www.remita.net/about/pricing.html">Pricing</a></li>
+
+              </ul>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="widget clearfix widget-tweeter">
+              <ul class="list-large list-icons">
+                <li><a href="https:////www.remita.net/#aboutremita">About Us</a></li>
+                <li><a href="https:////www.remita.net/index.php/component/content/article?id=160">Terms and Conditions</a></li>
+                <li><a href="https:////www.remita.net/index.php/privacy-policy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="widget clearfix widget-tweeter">
+              <ul class="list-large list-icons">
+                <li><a href="https:////www.remita.net/index.php/contact-us">Support Contact</a></li>
+                <li><a href="https:////www.remita.net/index.php/contact-us">Contact Information</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <h4 class="widget-title">CONNECT WITH US</h4>
+            <div class="col-md-12"><div class="social-icons center-block text-center">
+              <ul>
+                <li class="social-facebook"><a href="https://www.facebook.com/RemitaNet"><i class="fa fa-2x fa-facebook"></i></a></li>
+                <li class="social-twitter"><a href="https://www.twitter.com/RemitaNet"><i class="fa fa-2x fa-twitter"></i></a></li>
+                <li class="social-linkedin"><a href="https://www.linkedin.com/company-beta/2625584/"><i class="fa fa-2x fa-linkedin"></i></a></li>
+              </ul>
+            </div></div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="copyright-content">
+      <div class="container">
+        <div class="row">
+            <div class="copyright-text text-center">
+        <a href="https:////www.remita.net/index.php/component/content/article?id=160"> Terms and Conditions </a> | <a href="https:////www.remita.net/index.php/privacy-policy"> Privacy Policy
+        </a> | <a href="https:////www.remita.net/index.php/contact-us"> Contact Information </a> Copyright ï¿½ 2016  <a href="http://www.systemspecs.com.ng/" target="_blank"> SystemSpecs. </a> All Rights Reserved <a href="http://www.systemspecs.com.ng/" target="_blank">SystemSpecs.</a>
+      </div>
+        </div>
+      </div>
+    </div>
+  -->
+
+  <div>
+    <style>
+      .info-section-new {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .align-center {
+        align-items: center;
+      }
+      .info-section-alt {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .info-section-main {
+        display: flex;
+        justify-content: space-around;
+      }
+      @media (max-width: 900px) {
+        .info-section-new {
+          align-items: start;
+        }
+        .info-section-alt {
+          justify-content: start;
+        }
+        .info-section-main {
+          flex-direction: column;
+          justify-content: start;
+          gap: 3rem;
+        }
+      }
+    </style>
+    <div class="container footer-container">
+      <div class="info-section-main">
+        <div class="">
+          <div class="info-section-new">
+            <h4>Contact Us</h4>
+            <div>
+              <span>Remita Payment Services Limited</span><br>
+              <span style="color:#f3661d;">Licensed by the Central Bank of Nigeria</span>
+            </div>
+            <span>Plot B22 Chief Yesufu Abiodun Road, Oniru<br>Victoria Island, Lagos, Nigeria</span>
+            <span> info@remita.net </span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: end;">
+          <div class="text-left text-md-center">
+            <a href="https:////www.remita.net/legal/policy" target="_blank">Privacy Policy </a> | <a href="https:////www.remita.net/legal/terms" target="_blank">Terms &amp; Conditions</a>
+          </div>
+        </div>
+        <div class="info-section-new align-center">
+          <h4>Connect With Us</h4>
+          <div class="info-section-alt">
+            <a aria-label="instagram page" href="https://www.instagram.com/remitanet" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/footerinstagram.svg" width="32px" height="32px" alt="">
+            </a>
+            <a aria-label="twitter page" href="https://twitter.com/RemitaNET" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/footerx.svg" width="32px" height="32px" alt="">
+            </a>
+            <a aria-label="facebook page" href="https://www.facebook.com/RemitaNet/" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/footerfacebook.svg" width="32px" height="32px" alt="">
+            </a>
+            <a aria-label="linkedin page" href="https://www.linkedin.com/company/remita" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/footerlinkedin.svg" width="32px" height="32px" alt="">
+            </a>
+          </div>
+          <div class="info-section-alt">
+            <a aria-label="play store remita page" href="https://play.google.com/store/apps/details?id=com.systemspecs.remitamobile&amp;hl=en" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/googlestore.svg" alt="" width="202" height="66" class="download-store-btn google-image margin-top">
+            </a>
+            <a aria-label="apple app store remita page" href="https://apps.apple.com/ng/app/remita/id1234598058" target="_blank" rel="noopener">
+              <img src="https:////www.remita.net/assets/minimal/images/applestore.svg" alt="" width="202" height="66" class="download-store-btn">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row h-divider">
+
+  </div>
+
+  <div class="row footer-credit">
+    <p>Copyright © <span id="js-copy-right">2025</span> SystemSpecs. All Rights Reserved | Remita is a platform designed and developed by
+      <a href="http://www.systemspecs.com.ng" target="_blank">SystemSpecs.</a>
+    </p>
+    <script>
+      const copyRightEl = document.querySelector("#js-copy-right");
+      if (copyRightEl) copyRightEl.innerHTML = new Date().getFullYear();
+    </script>
+  </div>
+
+</footer>
+
+
+<!-- GO TOP BUTTON -->
+<a class="gototop gototop-button" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+<script type="text/javascript">
+  var APP_CONFIG = {
+    context: "/remita",
+    version: "1.6.01",
+    locale: "en",
+    captchaDemoMode: "false"
+  };
+</script>
+
+<script src="https://login.remita.net/remita/res/app-resources/dest/onepage-payment-bundle.min.js?v=1.6.01"></script>
+
+<script src="https://login.remita.net/remita/res/app-resources/dest/avs.module.bundle.js?v=1.6.01"></script>
+
+<script src="https://login.remita.net/remita/res/app-resources/dest/bank-custom-validation.module.bundle.js?v=1.6.01"></script>
+
+<script src="https://login.remita.net/remita/res/app-resources/custom/js/message-bundle_en.js?v=1.6.01"></script>
+
+<script src="https://login.remita.net/remita/res/app-resources/dest/invoices-bundle.min.js?v=1.6.01"></script>
+
+
+
+
+
+
+
+
+
+
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-971495296" data-load-time="1746003230576" height="0" width="0" src="https://td.doubleclick.net/td/rul/971495296?random=1746003230559&amp;cv=11&amp;fst=1746003230559&amp;fmt=3&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45je54s1v9123814234za200&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103051953~103077950~103106314~103106316~103116026~103173737~103173739~103200004&amp;ptag_exp=103051953~103077950~103106314~103106316~103116026~103173737~103173739~103200004&amp;u_w=1536&amp;u_h=864&amp;url=https%3A%2F%2Flogin.remita.net%2Fremita%2Fonepage%2Finvoice.spa%3Frrr%3D191215290225&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=Payment%20Invoice&amp;npa=0&amp;pscdl=noapi&amp;auid=1966207046.1746003231&amp;fledge=1&amp;data=event%3Dgtag.config" style="display: none; visibility: hidden;"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe></body></html>
