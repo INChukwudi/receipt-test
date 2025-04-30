@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "description": "My beautiful receipt project",
     "scripts": {
-         "start":"serve",
+         "start":"serve"
     }
     "dependencies": {
          "serve":"^11.3.2"
